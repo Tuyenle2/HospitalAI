@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BỆNH VIỆN DA LIỄU</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type=”text/javascript” src=”http://code.jquery.com/jquery-2.0.3.min.js”></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the link that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+
+<body>
+    {% include 'logo.html' %}
+    <div class="container" style="margin: 0 auto;font-family: Arial, Helvetica, sans-serif;">
+        <div class="col-lg-12 mt-4 mb-4 ">
+            <marquee> <i>Chào mừng đến với trang chẩn đoán online của Bệnh viện Phong- Da liễu Trung ương Quy Hòa</i>
+            </marquee>
+        </div>
+        <div class="col-lg-12 mt-4 mb-4 border border-primary rounded">
+            <div class="row col-lg-12 mt-3">
+                <div >
+                    <label>Xin chân thành cảm ơn <b style="color: red;">{{name}}</b> đã sử dụng ứng dụng chuẩn đoán online của bệnh viện Da liễu Trung ương Quy Hòa - với sự hỗ trợ từ FPT Software Quy Nhơn.</label>
+                    <label>Mã số khám bệnh của bạn là: <b style="color: red;">{{patient_ID}}</b>. Bạn có thể sử dụng mã số này để nhận được sự
+                        tư vấn miễn phí về phương pháp điều trị nám má tại
+                        Khoa Chăm sóc da Bệnh viện Phong- Da liễu Trung ương Quy Hòa.
+                    </label>
+
+                </div>       
+            </div>               
+            <div class="row col-lg-12 mt-3">
+                <div style="text-align: center;width:100%">
+                    <h3>{{message}}</h3>
+
+                </div>       
+            </div>     
+            <div class="text-center" style="text-align: center;width:100%">
+                <div >
+                    <h3>Theo dự đoán từ hệ thống của chúng tôi, nếu bạn giữ thói quen sinh hoạt như hiện tại, tỉ lệ mắc bệnh nám má của bạn trong tương lai sẽ là</h3>
+                    <h1 style="color:red;"> {{data}}%</h1>
+                </div>       
+            </div>        
+        </div>
+        <div class="col-lg-12 mt-4 mb-4 border border-primary rounded" style="padding-bottom: 0px; margin-bottom: 150px !important;">
+            <div class="row col-lg-12 mt-3">
+                <div class="text-center" style="text-align: center;width:100%">
+                    <h2>Một số nhân tố ảnh hưởng đến bệnh nám má</h2>
+                </div>       
+            </div>       
+            <div class="col-lg-12 mt-3">
+                    <p>Click chuột vào nội dung mà bạn quan tâm</p>
+                    
+                    <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'age')" id="defaultOpen">Độ tuổi</button>
+                    <button class="tablinks" onclick="openCity(event, 'economic')">Kinh tế</button>
+                    <button class="tablinks" onclick="openCity(event, 'use_medical')">Thuốc tránh thai</button>
+                    <button class="tablinks" onclick="openCity(event, 'pregnant_status')">Mang thai</button>
+                    <button class="tablinks" onclick="openCity(event, 'family_history')">Tiền sử gia đình</button>
+                    <button class="tablinks" onclick="openCity(event, 'contact_sun')">Ánh nắng</button>
+                    <button class="tablinks" onclick="openCity(event, 'perpose')" >Mỹ phẩm</button>
+                    </div>
+                    
+                    <div id="age" class="tabcontent">
+                        <p>Một số nghiên cứu khoa học cho thấy: 
+                        Tại các nước Đông Nam Á, nám má có thể bắt đầu xuất hiện từ 20-35 tuổi, 
+                        tức là từ rất sớm so với các chủng tộc khác và cứ tăng 10 tuổi thì nguy cơ rám má tăng gấp 10,3 lần.
+                        </p>
+                    </div>
+                    
+                    <div id="economic" class="tabcontent">
+                        <p>Khi kinh tế phát triển, nhu cầu thẩm mỹ ngày càng gia tăng. 
+                        <p>
+                            Những năm gần đây, trào lưu dùng mỹ phẩm dưỡng tẩy trắng da phát triển rầm rộ 
+                            và đã xuất hiện nhiều hậu quả nghiêm trọng do sử dụng các sản phẩm bôi trắng da không an toàn 
+                            như rám má và nhiều rối loạn sắc tố da khác, lão hóa da sớm, dị ứng mỹ phẩm. 
+                            Tuy nhiên, vì hiệu quả điều trị còn hạn chế và chi phí điều trị rám má tốn kém 
+                            nên chị em lại tiếp tục tìm cách bôi các sản phẩm tẩy trắng da không an toàn để giảm rám má, bất chấp hậu quả để lại.
+                        </p>
+                        <p>Nếu bạn không có nhiều tiền để mua các mỹ phẩm đắt tiền thì tốt nhất: 
+                        </p>
+                        <p>- Cũng không nên sử dụng các mỹ phẩm dưỡng trắng da không an toàn. 
+                        </p>
+                        <p>- Có những sản phẩm chống nắng có giá cả phải chăng bán tại các siêu thị hoặc nhà thuốc có nhân viên tư vấn sử dụng. 
+                            Bạn có thể lựa chọn những sản phẩm này!
+                        </p>
+                        <p>- Uống đủ nước, ngủ đủ giấc, bố sung các vitamin từ rau 
+                            và hoa quả, bảo vệ da bằng cách tránh nắng bằng các loại khẩu trang dày, 
+                            sẫm màu, trùm kín mặt và đội nón mũ rộng vành. Da bạn có hàng rào bảo vệ tự nhiên, 
+                            chỉ cần bạn hỗ trợ thêm cho hàng rào đó và không làm tổn hại hàng rào tự nhiên của cơ thể! Da khỏe là da đẹp!
+                        </p>
+                    </div>
+                    
+                    <div id="use_medical" class="tabcontent">
+                        <p>Có nghiên cứu khoa học cho thấy phụ nữ dùng thuốc tránh thai sẽ có nguy cơ nám má gấp 2,15 lần so với những phụ nữ không dùng thuốc tránh thai.</p>
+                        <p>Bạn đang dùng thuốc tránh thai thì hãy chú ý nếu thấy da mặt có hiện tượng nám má thì nên tham vấn bác sĩ 
+                        sản phụ khoa để lựa chọn biện pháp tránh thai khác (nếu có thể).
+                        </p>
+                    </div>
+                    
+                    <div id="pregnant_status" class="tabcontent">
+                        <p>Có nghiên cứu khoa học cho thấy những phụ nữ có tiền sử nám má 
+                            khi mang thai có cơ nguy nám má cao gấp 2,24 lần so với những phụ nữ không có tiền sử nám má khi mang thai. 
+                            Bạn có tiền sử nám má khi mang thai vậy bạn hãy chú ý chăm sóc da dự phòng nám má từ sớm
+                             và điều trị ngay nếu thấy bắt đầu có biểu hiện nám má nhé!
+                        </p>
+                    </div>
+                    
+                    <div id="family_history" class="tabcontent">
+                        <p>Có nghiên cứu khoa học cho thấy những phụ nữ có tiền sử gia đình rám má có nguy cơ rám má cao gấp 2,39 lần 
+                            so với những phụ nữ không có tiền sử gia đình rám má. Bạn có người thân bị nám má sẽ dễ mắc bệnh nám má. </p>
+                        <p>Vì vậy bạn hãy chú ý chăm sóc da dự phòng nám má từ sớm và điều trị ngay nếu thấy bắt đầu có biểu hiện nám má nhé! </p> 
+                    </div>
+                    
+                    <div id="contact_sun" class="tabcontent">
+                        <p>Có nghiên cứu khoa học cho thấy những phụ nữ có công việc phải tiếp xúc ánh nắng nhiều (> 1 giờ/ngày)
+                             có nguy cơ nám má cao gấp 1,69 lần so với những phụ nữ có thời gian tiếp xúc ánh nắng ít (≤ 1 giờ/ ngày). 
+                             <br>Bạn hãy chú ý chăm sóc da dự phòng nám má từ sớm và điều trị ngay nếu thấy bắt đầu có biểu hiện nám má nhé! </p>
+                    </div>
+                    
+                    <div id="perpose" class="tabcontent">
+                        <p>Có nghiên cứu khoa học cho thấy việc sử dụng mỹ phẩm dưỡng trắng không an toàn làm tăng nguy cơ rám má lên gấp 1,48 lần so với nhóm không dùng. </p>
+                            <p>Khi kinh tế phát triển, nhu cầu thẩm mỹ ngày càng gia tăng. Những năm gần đây, trào lưu dùng mỹ phẩm dưỡng tẩy trắng da phát triển rầm rộ 
+                                và đã xuất hiện nhiều hậu quả nghiêm trọng do sử dụng các sản phẩm bôi trắng da không an toàn như nám má và nhiều rối loạn sắc tố da khác, 
+                                lão hóa da sớm, dị ứng mỹ phẩm. Tuy nhiên, vì hiệu quả điều trị còn hạn chế và chi phí điều trị nám má tốn kém nên chị em lại tiếp tục 
+                                tìm cách bôi các sản phẩm tẩy trắng da không an toàn để giảm nám má, bất chấp hậu quả để lại.
+                            </p>
+                    </div>
+
+                    
+                    <div id="contact" class="tabcontent">
+                    </div>
+    
+                    
+                    
+                    <script>
+                    function openCity(evt, cityName) {
+                    var i, tabcontent, tablinks;
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+                    document.getElementById(cityName).style.display = "block";
+                    evt.currentTarget.className += " active";
+                    }
+                    
+                    // Get the element with id="defaultOpen" and click on it
+                    document.getElementById("defaultOpen").click();
+                    </script>
+            </div>   
+        </div>  
+               
+    </div>
+    {% include 'footer.html' %}
+
+</body> 
+
+</html>
+<!DOCTYPE html>

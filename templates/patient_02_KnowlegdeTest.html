@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BỆNH VIỆN DA LIỄU</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type=”text/javascript” src=”http://code.jquery.com/jquery-2.0.3.min.js”></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    {% include 'logo.html' %}
+
+    <div class="container" style="margin: 0 auto;font-family: Arial, Helvetica, sans-serif;">
+        <form action="/knowledgeTest" method="post">
+            <div class="col-lg-12 mt-4 mb-4 ">
+                <marquee> <i>Chào mừng đến với trang chẩn đoán online của Bệnh viện Phong- Da liễu Trung ương Quy Hòa</i>
+                </marquee>
+                <marquee> <i>Các thông tin dưới đây sẽ được bảo mật hoàn toàn và chỉ được sử dụng với mục đích khoa học.</i>
+                </marquee>
+            </div>            
+            <div class="row col-lg-12 mt-3">
+            </div>
+            <div class="col-lg-12 mt-4 mb-4 border border-primary rounded" style="padding-bottom: 0px; margin-bottom: 150px !important;">
+                <div class="row col-lg-12 mt-3">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <h1>Câu hỏi khảo sát kiến thức, dự phòng rám má</h1>
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="text-center" style="text-align: left;width:100%">
+                        <h5>Chọn câu trả lời cho các câu hỏi dưới đây.</h5>
+                    </div>
+                </div>
+
+                <!-- A. CÁC CÂU HỎI VỀ KIẾN THỨC ĐỐI VỚI BỆNH RÁM MÁ -->                     
+                <div class="row col-lg-12 mt-3" hidden>
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Mã bệnh nhân<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input name="patient_ID" type="text" class="form-control" placeholder="{{patient_ID}}" value="{{patient_ID}}">
+                    </div>
+                </div>  
+                <div class="row col-lg-12 mt-3">
+                    <div class="text" style="text-align: left;width:100%">
+                        <h4>A. CÁC CÂU HỎI VỀ KIẾN THỨC ĐỐI VỚI BỆNH RÁM MÁ</h4>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 1 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Rám má có phải là do di truyền không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA01" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA01" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA01" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 2 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Rám má có phải là do nội tiết không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA02" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA02" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA02" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 3 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má là do mang thai, sinh đẻ không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA03" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA03" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA03" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 4 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má là do tiếp xúc với ánh nắng mặt trời hay không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA04" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA04" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA04" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 5 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má là do dùng mỹ phẩm không đúng cách không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA05" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA05" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA05" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 6 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má là do lão hóa da không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA06" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA06" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA06" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 7 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má là do ảnh hưởng một số bệnh nội khoa không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA07" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA07" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA07" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 8 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải rám má có thể tự khỏi mà không cần điều trị không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA08" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA08" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA08" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 9 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Có phải sử dụng kem chống nắng thường xuyên có thể phòng tránh rám má không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA09" type="radio" class="form-check-input" value="1"> Đúng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA09" type="radio" class="form-check-input" value="0"> Sai
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QA09" type="radio" checked class="form-check-input" value="-1"> Không biết
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B. THỰC HÀNH VỀ RÁM MÁ VÀ CÁC YẾU TỐ LIÊN QUAN -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="text" style="text-align: left;width:100%">
+                        <h4>B. CÁC CÂU HỎI THỰC HÀNH VỀ RÁM MÁ VÀ CÁC YẾU TỐ LIÊN QUAN</h4>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 1 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn có Mang khẩu trang hàng ngày trước khi đi ra nắng không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB01" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB01" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 2 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Khẩu trang bạn sử dụng hàng ngày có trùm kín mặt, vải dày, sẫm màu không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB02" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB02" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 3 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn có bôi kem chống nắng hàng ngày trước khi đi ra nắng 20-30 phút không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB03" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB03" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 4 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn có sử dụng kem dưỡng trắng da ban đêm không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB04" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB04" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 5 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn có được soi da, tư vấn sử dụng mỹ phẩm không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB05" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB05" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 6 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Mỹ phẩm bạn sử dụng có nhãn mác, nguồn gốc xuất xứ rõ ràng không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB06" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB06" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 7 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Mỹ phẩm bạn sử dụng có hạn sử dụng không?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB07" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB07" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 8 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn đã từng khám, tư vấn chăm sóc da ở cơ sở Y tế chưa?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB08" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB08" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- CÂU HỎI 9 -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-8">
+                        <label for="">Bạn đã từng điều trị rám má ở cơ sở y tế chuyên khoa da liễu chưa?</label>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB09" type="radio" class="form-check-input" value="1"> Có
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="QB09" type="radio" checked class="form-check-input" value="0"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>                
+
+                <!-- SUBMID BUTTON -->
+                <div class="row col-lg-12 mt-3 mb-5">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <input type="submit" class="btn btn-outline-info btn-lg " id="get_score" value="NHẬN KẾT QUẢ ĐÁNH GIÁ">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+
+</html>
+<!DOCTYPE html>

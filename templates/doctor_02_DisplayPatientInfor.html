@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BỆNH VIỆN DA LIỄU TRUNG ƯƠNG QUY HÒA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type=”text/javascript” src=”http://code.jquery.com/jquery-2.0.3.min.js”></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    {% include 'logo.html' %}
+
+    <div class="container" style="margin: 0 auto;font-family: Arial, Helvetica, sans-serif;">
+        <form action="/infoDisplay" method="post">
+            <div class="col-lg-12 mt-4 mb-4 border border-primary rounded" style="padding-bottom: 0px; margin-bottom: 100px !important;">
+                <div class="row col-lg-12 mt-3">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <h1>THÔNG TIN BỆNH NHÂN</h1>
+                    </div>
+                </div>                  
+                <div class="row col-lg-12 mt-3" hidden>
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Mã bệnh nhân<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input name="patient_ID" type="text" class="form-control" placeholder="{{patient_ID}}" value="{{patient_ID}}">
+                    </div>
+                </div>  
+                <table style="width:100%">
+                    {% for row in survey_data %}
+                    <tr>
+                      <th>{{row['Feature']}}</th>
+                      <td>{{row['Value']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </form>
+        <form action="/infoDisplay" method="post">
+            <div class="col-lg-12 mt-4 mb-4 border border-primary rounded" style="padding-bottom: 0px; margin-bottom: 100px !important;">
+                <div class="row col-lg-12 mt-3">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <h1>KẾT QUẢ TRẢ LỜI KIỂM TRA KIẾN THỨC</h1>
+                    </div>
+                </div>
+                <table style="width:100%">
+                    {% for row in knowledge_data %}
+                    <tr>
+                      <th>{{row['Question']}}</th>
+                      <td>{{row['Result']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </form>
+        <form action="/infoDisplay" method="post">
+            
+            <div class="col-lg-12 mt-4 mb-4 border border-primary rounded" style="padding-bottom: 0px; margin-bottom: 100px !important;">
+                <div class="row col-lg-12 mt-3 mb-5">
+                    <div class="col-lg-6">
+                        <h5>Kết quả chuẩn đoán</h5>
+                    </div>     
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' name="results" style="border-color:gray">
+                            <option value='0'>Có nám má</option>
+                            <option value='1'>Không nám má</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3 mb-5">
+                    <div class="col-lg-6">
+                    <h5>Ghi chú</h5>
+                    </div>     
+                    <div class="col-lg-6 col-sm-6">
+                        <input type="text" class='form-control' name="detail" style="border-color:gray">
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3 mb-5">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <input type="submit" class="btn btn-outline-info btn-lg " id="sb" value="XÁC NHẬN KẾT QUẢ" style="border-color:gray">
+                    </div>
+                </div>  
+            </div>
+        </form>      
+    </div>
+    <!-- Footer -->
+    {% include 'footer.html' %}
+</body>
+</html>
+<!DOCTYPE html>

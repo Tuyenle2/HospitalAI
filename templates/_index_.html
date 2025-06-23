@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BỆNH VIỆN DA LIỄU</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type=”text/javascript” src=”http://code.jquery.com/jquery-2.0.3.min.js”></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function() {
+            $( ".startdate" ).datepicker({
+                dateFormat: 'yy-mm-dd',
+                changeMonth: true,
+                changeYear: true
+            });
+        })
+    </script>
+    <script>
+        function showDiv(divId, element){
+            document.getElementById(divId).hidden= element.value == 1 ? false : true;
+        };
+    </script>
+</head>
+
+<body>
+    <div class="col-lg-12 mt-4 mb-4 ">
+        <div class="navbar navbar-light bg-light justify-content-between">
+            <img src="https://bvquyhoa.vn/wp-content/uploads/2018/05/banner2.png"
+                alt="W3Schools.com" style=" margin-left: auto; margin-right: auto;">
+        </div>
+    </div>
+
+    <div id="container" style="width: 1020px; margin: 0 auto;font-family: Arial, Helvetica, sans-serif;">
+        <form action="/survey" method="post">
+            <div class="col-lg-12 mt-4 mb-4 " style="text-align: center;">
+                <marquee> <i><c>Chào mừng đến với trang chẩn đoán online của Bệnh viện Da liễu Trung ương Quy Hòa. Chúng tôi cam kết bảo mật hoàn toàn các thông cá nhân của bạn và chỉ sử dụng chúng với mục đích khoa học.</i>
+                </marquee>
+            </div>
+            <div class="col-lg-12 mt-4 mb-4 border border-primary rounded">
+                <div class="row col-lg-12 mt-3">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <h1>THÔNG TIN CHẨN ĐOÁN</h1>
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Họ và tên<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input name="name" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Ngày tháng năm sinh<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="number" name='bd_month' placeholder="Tháng" min='1' max='12' aria-required="true">
+                        <input type="number" name='bd_year' placeholder="Năm" min='1900' max='2020' aria-required="true">
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Giới tính</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="gender" type="radio" checked class="form-check-input" value="0"> Nam
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="gender" type="radio" class="form-check-input" value="1"> Nữ
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Địa chỉ thường trú<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input class="form-control" id="area" name="area" placeholder="Số nhà, tên đường">
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Số điện thoại<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input class="form-control" id="phone" name="phone" type="text" placeholder="094876xxx">
+                    </div>
+                </div>
+
+                <!-- Thông tin về sắc tộc -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Dân tộc<scan style="color:red"> *</scan> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="nation">
+                            <option value='0'>Kinh</option>
+                            <option value='1'>Khác</option>
+                        </select>    
+                    </div>
+                </div>
+
+                <!-- Nghề nghiệp hiện tại -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Nghề nghiệp hiện tại</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="job">
+                            <option value='0'>Nông dân</option>
+                            <option value='1'>Buôn bán</option>
+                            <option value='2'>Cán bộ, Sinh viên</option>
+                            <option value='3'>Công nhân</option>
+                            <option value='4'>Chăn nuôi</option>
+                            <option value='5'>Nội trợ</option>
+                            <option value='6'>Khác</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6" id="job_display_1" style="display:none">
+                        <label for=""> </label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6" id="job_display_2" style="display:none">
+                        <input class="form-control" type="text"
+                            placeholder="Vui lòng nhập nghề nghiệp của bạn">
+                    </div>
+                </div>
+                <!-- Trình độ học vấn -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Trình độ học vấn</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="job">
+                            <option value='0'>Mù chữ, tiểu học</option>
+                            <option value='1'>THCS (cấp 2)</option>
+                            <option value='2'>THPT (Cấp 3)</option>
+                            <option value='3'>Trung cấp, cao đẳng</option>
+                            <option value='4'>Đại học trở lên</option>
+                        </select> 
+                    </div>
+                </div>
+                <!-- Tình trạng hôn nhân -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Tình trạng hôn nhân</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="nation">
+                            <option value='0'>Chưa kết hôn</option>
+                            <option value='1'>Đã kết hôn</option>
+                        </select>    
+                    </div>
+                </div>
+                <!-- Số lần mang thai-->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Số lần mang thai</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input class="form-control" name="number_of_pregnancies" type="number" value="0" min='0'>
+                    </div>
+                </div>
+                <!-- Số lần sinh con -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Số lần sinh con</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input class="form-control" name="number_of_children_born" type="number" value="0" min='0'>
+                    </div>
+                </div>
+                <!-- Tình trạng rám má khi mang thai -->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn có bị nám má khi mang thai không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="prehistoric_frame_has_pregnant_yes" onchange="showDiv('prehistoric_frame_has_pregnant_display', this)">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <!-- Thời gian bắt đầu xuất hiện rám má khi mang thai  -->
+                <div style="display: none" id="prehistoric_frame_has_pregnant_display">
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                                <label for="">Tình trạng nám má xuất hiện từ tháng thứ mấy?</label>
+                        </div>                        
+                        <div class="col-lg-6 col-sm-6">
+                            <input class="form-control" name="prehistoric_frame_has_pregnant_month" type="number" value="0" min='0' max = '9'>
+                        </div>
+                    </div>
+                </div>        
+                <!-- Có sử dụng thuốc tránh thai hay không-->
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn có dùng thuốc tránh thai không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="contraception">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Gia đình bạn có ai đã hoặc đang bị nám má không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="prehistoric_famaly_frame_has">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn có mắc bệnh nội khoa không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="pathological" onchange="showDiv('pathological_display', this)">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3" id="pathological_display" hidden>
+                    <div class="col-lg-6 col-sm-6">
+                            <label for="">Cụ thể hơn, bạn đã mắc bệnh gì?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="pathological_name">
+                            <option value='1'>Bệnh tuyến giáp</option>
+                            <option value='2'>Bệnh cổ tử cung</option>
+                            <option value='3'>Bệnh động kinh</option>
+                            <option value='4'>Bệnh khác</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Một ngày bạn tiếp xúc với ánh nắng khoảng bao nhiêu giờ?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <input class="form-control" name="time_contact_light" type="number"
+                            placeholder="0 (Nếu 1 giờ thì 1)" value="0">
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn thường tiếp xúc với ánh nắng vào thời điểm nào trong ngày</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="contact_light_seesion" class="form-check-input" type="checkbox" value="0">
+                                Buổi sáng
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="contact_light_seesion" class="form-check-input" type="checkbox" value="1">
+                                Buổi trưa
+                            </label>
+                        </div>
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input name="contact_light_seesion" class="form-check-input" type="checkbox" value="2">
+                                Buổi chiều
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn có thường xuyên tiếp xúc với hóa chất không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="TSUHOACH" onchange="showDiv('TSUHOACH_display', this)">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <div class="row col-lg-12 mt-3" id="TSUHOACH_display" hidden>
+                    <div class="col-lg-6 col-sm-6">
+                            <label for="">Bạn thường tiếp xúc với loại hóa chất nào?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="TENHOACH">
+                            <option value='1'>Xăng dầu</option>
+                            <option value='2'>Phân bón</option>
+                            <option value='3'>Xi măng</option>
+                            <option value='4'>Khác</option>
+                        </select>  
+                    </div>
+                </div>                
+                <div class="row col-lg-12 mt-3">
+                    <div class="col-lg-6 col-sm-6">
+                        <label for="">Bạn có sử dụng mỹ phẩm không?</label>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <select class='form-control' id="use_cosmetic" onchange="showDiv('use_cosmetic_display', this)">
+                            <option value='0'>Không</option>
+                            <option value='1'>Có</option>
+                        </select>  
+                    </div>
+                </div>
+                <div id="use_cosmetic_display" hidden>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Độ tuổi bạn bắt đầu sử dụng mỹ phẩm từ khi nào?</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <input class="form-control" name="age_cosmetic" type="number" placeholder="0" value="">
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Mỹ phẩm mà bạn hay sử dụng tên gì?</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <input class="form-control" name="name_cosmectic" type="text"
+                                placeholder="ví dụ như Bò sữa">
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Nước sản xuất loại nước hóa mà bạn hay dùng</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <input class="form-control" name="country_of_manufacture" type="text"
+                                placeholder="Việt Nam">
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Mỹ phẩm bạn thường mua ở đâu?</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <select class='form-control' id="bought_place">
+                                <option value='1'>Cửa hàng tạp hóa</option>
+                                <option value='2'>Siêu thị</option>
+                                <option value='3'>Chợ</option>
+                                <option value='4'>Bạn bè người quen mua dùm/tặng</option>
+                                <option value='5'>Mua ở đại lý, nhà phân phối chính hãng</option>
+                                <option value='6'>Mua ở nhà thuốc, cửa hàng thuốc</option>
+                                <option value='7'>Khác</option>
+                            </select>  
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Mỹ phẩm bạn thường mua có giá tiền bao nhiêu?</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <input class="form-control" name="price" type="number"
+                                placeholder="Nếu giá tiền là 100 nghìn đồng, vui lòng điền là 100">
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-3">
+                        <div class="col-lg-6 col-sm-6">
+                            <label for="">Mục đích của bạn sử dụng mỹ phẩm là gì?</label>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input name="cosmectic_purpose" type="checkbox" class="form-check-input" value="1">
+                                    Trắng da, mịn
+                                    da,làm đẹp da
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input name="cosmectic_purpose" type="checkbox" class="form-check-input" value="2">
+                                    Chữa nám má,
+                                    tàn nhang
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input name="cosmectic_purpose" type="checkbox" class="form-check-input" value="3">
+                                    Chống nhăn
+                                    da
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input name="cosmectic_purpose" type="checkbox" class="form-check-input" value="4">
+                                    Khác
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="hidenCheckBoxCosmecticPurposet" id="hidden2">
+                <div class="row col-lg-12 mt-3 mb-5">
+                    <div class="text-center" style="text-align: center;width:100%">
+                        <input type="submit" class="btn btn-outline-info btn-lg " id="sb" value="CHẨN ĐOÁN">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="background-color: black">
+            <div style="color:cornsilk;">
+                Trang tin điện tử Bệnh viện Phong – Da liễu Trung ương Quy Hòa
+                Giấy phép của Cục Báo chí – Bộ Văn hóa Thông tin số: 54/GP-BC ngày 01/03/2006
+                Bản quyền: Bệnh viện Phong – Da liễu Trung ương Quy Hòa
+            </div>
+            <div style="color:cornsilk;">
+                Tel: (84 0256) 3747 999 – Fax: (84 0256) 3646 344 – Đt.Tư vấn (84 0256 3532 536) Email:
+                quyhoandh2005@gmail.com
+            </div>
+            <div><a href="http://localhost:5000/survey"> benhviendalieu.com</a></div>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+<script>
+    document.getElementById('sb').onclick = function () {
+        var checkbox1 = document.getElementsByName('contact_light_seesion');
+        var checkbox2 = document.getElementsByName('cosmectic_purpose')
+
+        var resultCosmecticPurposet = "";
+        var resultSesionContactLight = "";
+
+        var SesionContactLight = document.getElementById('hidden1')
+        var CosmecticPurposet = document.getElementById('hidden2')
+
+        for (var i = 0; i < checkbox1.length; i++) {
+            if (checkbox1[i].checked === true) {
+                resultSesionContactLight += checkbox1[i].value + ',';
+            }
+        }
+        SesionContactLight.value = resultSesionContactLight;
+
+        for (var i = 0; i < checkbox2.length; i++) {
+            if (checkbox2[i].checked === true) {
+                resultCosmecticPurposet += checkbox2[i].value + ',';
+            }
+        }
+        CosmecticPurposet.value = resultCosmecticPurposet;
+
+    };
+</script>
+
+</html>
+<!DOCTYPE html>
